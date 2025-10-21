@@ -1,4 +1,6 @@
 <?php
+include '../inc/inc.functions.php'; //inclusion du fichier des fonctions
+
 	$article = getArticleById(
 		array_key_exists('id', $_GET) ? $_GET['id'] : null
 	);
