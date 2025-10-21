@@ -3,7 +3,7 @@
 		<h1>Mon [ blog ].</h1>
 		<p class="major">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam consectetur porta tellus, quis auctor ante pulvinar non. Quisque aliquet lacus posuere purus vestibulum, eget rutrum turpis scelerisque.</p>
 		<ul class="actions stacked">
-			<li><a href="#first" class="button big wide smooth-scroll-middle">Consulter mes articles</a></li>
+			<li><a href="#first" class="button big wide smooth-scroll-middle">Consulter mes articles</a></li> <!-- mauvais lien href à corriger -->
 		</ul>
 	</div>
 	<div class="image">
@@ -12,6 +12,7 @@
 </section>
 
 <?php 
+include '../inc/inc.functions.php'; //inclusion du fichier des fonctions
 	$_articles = getArticlesFromJson();
 
 	if($_articles && count($_articles)){

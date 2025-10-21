@@ -1,4 +1,4 @@
-<?php includ 'inc/inc.functions.php'; ?>
+<?php include 'inc/inc.functions.php'; ?> <!-- sert à inclure le fichier avec les fonctions : ajoute le e-->
 <!DOCTYPE HTML>
 <!--
 	Story by HTML5 UP
@@ -17,14 +17,14 @@
 		<!-- Wrapper -->
 			<div id="wrapper" class="divided">
 				<?php 
-					getPagesTemplate(
-						array_key_exist('page', $_GET) ? $_GET['page'] : null
+					getPageTemplate( // modification du nom de la fonction à partir de ce qui est écrit dans le fichier des fonctions 
+						array_key_exists('page', $_GET) ? $_GET['page'] : null
 					); 
 				?>
-				<?php include 'inc/tpls-footer.php'; ?>
+				<?php include 'inc/tpl-footer.php'; // enlever le s de tpl ?> 
 			</div>
 
-		<?php includes 'inc/inc.js.php'; ?>
+		<?php include 'inc/inc.js.php'; ?> <!-- sert à inclure le fichier avec les scripts js include-->
 
 	</body>
 </html>
