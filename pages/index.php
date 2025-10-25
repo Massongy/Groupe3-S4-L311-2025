@@ -12,14 +12,14 @@
 </section>
 
 <?php 
-include '../inc/inc.functions.php'; //inclusion du fichier des fonctions
+include_once dirname(__DIR__) . '/inc/inc.functions.php'; //inclusion du fichier des fonctions + Correction du chemin d'inclusion avec dirname(__DIR__)+ ajout de include_once pour éviter les inclusions répétées
 	$_articles = getArticlesFromJson();
 
 	if($_articles && count($_articles)){
 		$compteur = 1;
 		foreach($_articles as $article){
 			$classCss = ($compteur % 2 == 0 ? 'left' : 'right');
-			##$compteur++;
+			$compteur++; // retrait des # pour rendre fonctionnelle l'incrementation du compteur & l'alternance d'orientation
 			?>
 				<section class="spotlight style1 orient-<?php echo $classCss;?>  content-align-left image-position-center onscroll-image-fade-in" id="first">
 					<div class="content">
@@ -30,7 +30,7 @@ include '../inc/inc.functions.php'; //inclusion du fichier des fonctions
 						</ul>
 					</div>
 					<div class="image">
-						<img src="<?php echo $art_icle['image'];?>" alt="" />
+						<img src="<?php echo $article['image'];?>" alt="" />
 					</div>
 				</section>
 

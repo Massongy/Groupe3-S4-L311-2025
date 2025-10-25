@@ -4,7 +4,7 @@
     define('TL_ROOT', dirname(__DIR__));
     define('LOGIN', 'UEL311');
     define('PASSWORD', 'U31311');
-    define('DB_ARTICLE', TL_ROOT.'/dbal/articles.json'); //enlever le s de DBALS pour une bonne définition de la constante
+    define('DB_ARTICLE', TL_ROOT.'/db/articles.json'); //enlever le s de DBALS pour une bonne définition de la constante+ Coorection du chemin avec db au lieu de dbal
 
     function connectUser($login = null, $password = null){
         if(!is_null($login) && !is_null($password)){
@@ -20,7 +20,7 @@
 
     function setDisconnectUser(){
          unset($_SESSION['User']);
-         sessions_destroy();
+         session_destroy(); // Correction de session_destroy() en retirant le s
     }
 
     function isConnected(){
