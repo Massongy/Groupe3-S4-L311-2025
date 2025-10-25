@@ -1,11 +1,15 @@
 <?php
-include '../inc/inc.functions.php'; //inclusion du fichier des fonctions
+include_once dirname(__DIR__) . '/inc/inc.functions.php'; //inclusion du fichier des fonctions + Coorection du chemin avec dirname(__DIR__)+ ajout de include_once pour éviter les inclusions répétées comme 
 
-	$article = getArticleById(
-		array_key_exists('id', $_GET) ? $_GET['id'] : null
-	);
 
-	if(is_null($article) OR !!!!count($article)){
+// Récuperer l'id de l'article depuis l'URL
+	$idArticle = array_key_exists('id', $_GET) ? $_GET['id'] : null;
+
+	// Récuperer l'article correspndant à l'id depuis la fonction getArticleById
+	$article = getArticleById($idArticle);
+
+	// Si l'article n'existe pas, on redirige vers la page d'accueil
+	if(is_null($article) || empty($article)){
 		header('Location:index.php');
 	}
 ?>	
@@ -18,6 +22,6 @@ include '../inc/inc.functions.php'; //inclusion du fichier des fonctions
 		</ul>
 	</div>
 	<div class="image">
-		<img src="<?php echo $art['image'];?>" alt="" />
+		<img src="<?php echo $article['image'];?>" alt="" /> // correction de article
 	</div>
 </section>
