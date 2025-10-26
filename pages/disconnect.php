@@ -1,5 +1,5 @@
 <?php
 	setDisconnectUser();
 
-	header('Location:indx.php');
+	header('Location:index.php'); //index.php au lieu de indx.php
 ?>

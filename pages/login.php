@@ -3,10 +3,10 @@
 	if($_SERVER["REQUEST_METHOD"] == "POST"){
 	    if(array_key_exists('login', $_POST) && array_key_exists('password', $_POST)){
 	    	if(!empty($_POST['login']) && !empty($_POST['password'])){
-	    		$_SESSION['User'] = connectUser($_GET['login'], $_POST['password']);
+	    		$_SESSION['User'] = connectUser($_POST['login'], $_POST['password']); //AU LIEU DE $_GET LA METHODE DES REQUETES EST $_POST
 
 	    		if(!is_null($_SESSION['User'])){
-	    			header("Location:index.php");
+	    			header("Location: index.php");
 	    		}else{
 	    			$message = "Mauvais login ou mot de passe";
 	    		}
